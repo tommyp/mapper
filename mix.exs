@@ -21,7 +21,7 @@ defmodule Mapper.Mixfile do
   def application do
     [
       mod: {Mapper.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :coherence]
     ]
   end
 
@@ -43,6 +43,7 @@ defmodule Mapper.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:espec, "~> 1.6.1", only: :test},
+      {:coherence, "~> 0.5"}
     ]
   end
 
