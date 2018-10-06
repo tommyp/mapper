@@ -1,0 +1,32 @@
+<h2>Listing Places</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lat</th>
+      <th>Lng</th>
+      <th>Address</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for place <- @places do %>
+    <tr>
+      <td><%= place.name %></td>
+      <td><%= place.lat %></td>
+      <td><%= place.lng %></td>
+      <td><%= place.address %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: place_path(@conn, :show, place), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: place_path(@conn, :edit, place), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: place_path(@conn, :delete, place), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Place", to: place_path(@conn, :new) %></span>
