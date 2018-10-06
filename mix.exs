@@ -10,7 +10,8 @@ defmodule Mapper.Mixfile do
       compilers: [:phoenix, :gettext] ++ Mix.compilers,
       start_permanent: Mix.env == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      preferred_cli_env: [espec: :test],
     ]
   end
 
@@ -40,7 +41,8 @@ defmodule Mapper.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:espec, "~> 1.6.1", only: :test},
     ]
   end
 
