@@ -9,3 +9,8 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+Mapper.Repo.delete_all Mapper.Coherence.User
+
+Mapper.Coherence.User.changeset(%Mapper.Coherence.User{}, %{name: "Test User", email: "testuser@example.com", password: "secret", password_confirmation: "secret"})
+|> Mapper.Repo.insert!
